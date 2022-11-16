@@ -7,6 +7,7 @@ public class Persona {
     protected int dni;
     protected int peso;
     protected int altura;
+    
 
     public Persona(int edad, String nombre, int dni, int peso, int altura) {
         this.edad = edad;
@@ -35,6 +36,7 @@ public class Persona {
     public int getAltura() {
         return altura;
     }
+    
     
     
 

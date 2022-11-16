@@ -11,10 +11,7 @@ public class Medico extends Persona{
         this.especialidad = especialidad;
         this.matricula = matricula;
     }
-
-    
-
-   }
+}
     
     
 

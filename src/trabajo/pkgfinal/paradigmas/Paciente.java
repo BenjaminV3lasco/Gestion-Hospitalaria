@@ -2,15 +2,15 @@ package trabajo.pkgfinal.paradigmas;
 
 
 public class Paciente extends Persona {
-    public String enfermedad;
+    public int codPaciente;
 
-    public Paciente(String enfermedad, int edad, String nombre, int dni, int peso, int altura) {
+    public Paciente(int codPaciente, int edad, String nombre, int dni, int peso, int altura) {
         super(edad, nombre, dni, peso, altura);
-        this.enfermedad = enfermedad;
+        this.codPaciente = codPaciente;
     }
 
-    public String getEnfermedad() {
-        return enfermedad;
+    public int getCodPaciente() {
+        return codPaciente;
     }
 
     public int getEdad() {
@@ -32,6 +32,8 @@ public class Paciente extends Persona {
     public int getAltura() {
         return altura;
     }
+    
+    
     
 
     

@@ -1,15 +1,14 @@
 package trabajo.pkgfinal.paradigmas;
 
-import java.util.Scanner;
-import trabajo.pkgfinal.paradigmas.Persona;
+
 import trabajo.pkgfinal.paradigmas.Medico;
-import trabajo.pkgfinal.paradigmas.Paciente;
+
 import javax.swing.JOptionPane;
 
 public class TrabajoFinalParadigmas {
 
     public static void main(String[] args) {
-      Scanner Teclado = new Scanner (System.in); 
+       
       int respuesta, info,i;
       
       info=0;
@@ -17,35 +16,25 @@ public class TrabajoFinalParadigmas {
       ctl.setTamanio(1);
       
       //Medicos
-      Medico medico1 = new Medico("Kinesiólogo",234,52,"Thomas Tuchel",22456789,72,1724);
-      
-      
+      Medico medico1 = new Medico("Médico General",234,52,"Thomas Tuchel",22456789,72,1724);
       Medico medico2 = new Medico("Traumatólogo",451,56,"Massimiliano Allegri",19456789,77,181);
-      
-      
       Medico medico3 = new Medico("Cardiólogo",125,41,"Jorge Sampaoli",31856709,81,177);
-     
-      
       Medico medico4 = new Medico("Oftalmólogo",225,43,"Alexander Medina",33456804,87,188);
-     
-      
       Medico medico5 = new Medico("Cirujano",100,49,"Carlos Velazquez",29756899,80,174);
       
      
         
-        
-    System.out.println("¡Bienvenido al Sistema de Gestión Hospitalaria!");
-    
     do{
        respuesta = Integer.parseInt(JOptionPane.showInputDialog(
-       
-       "1. Ingresar los datos del paciente\n"
+       "¡Bienvenido al Sistema de Gestión Hospitalaria!\n"
+       +"1. Ingresar los datos del paciente\n"
        +"2. Ver Informacion\n"
        +"3. Salir del Sistema"));
        
         switch(respuesta){
             case 1:
                 ctl.insertar();
+                ctl.enfermedadPaciente();
                 break;
             case 2:
                 info = Integer.parseInt(JOptionPane.showInputDialog(
@@ -55,6 +44,7 @@ public class TrabajoFinalParadigmas {
                 
                 switch(info){
                     case 1://Listado Médicos de la Clínica
+                        
                         System.out.println("============================");
                         System.out.println("Nombre: "+medico1.nombre);
                         System.out.println("Edad: "+medico1.edad);
@@ -86,14 +76,19 @@ public class TrabajoFinalParadigmas {
                         System.out.println("Especialidad: "+medico5.especialidad);
                         System.out.println("Matricula: "+medico5.matricula);
                         System.out.println("============================");
-                        JOptionPane.showMessageDialog(null, info);
+                        
                         break;
                     case 2://Historial Clínico Paciente
                         ctl.mostrarDatos();
                         break;   
                 }
                 break;
-                
+            case 3:
+                JOptionPane.showMessageDialog(null, "¡Hasta Luego, que tenga buen día!");
+                break;
+            default:
+                JOptionPane.showMessageDialog(null, "Opcion invalida");
+                        break;
         }
     }while(respuesta<3);
     
