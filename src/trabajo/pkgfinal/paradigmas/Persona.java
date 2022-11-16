@@ -35,27 +35,10 @@ public class Persona {
     public int getAltura() {
         return altura;
     }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setDni(int dni) {
-        this.dni = dni;
-    }
-
-    public void setPeso(int peso) {
-        this.peso = peso;
-    }
-
-    public void setAltura(int altura) {
-        this.altura = altura;
-    }
     
     
+
+    
+
    
-}
+  }

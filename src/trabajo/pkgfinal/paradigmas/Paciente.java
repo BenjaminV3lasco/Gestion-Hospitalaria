@@ -2,7 +2,7 @@ package trabajo.pkgfinal.paradigmas;
 
 
 public class Paciente extends Persona {
-    private String enfermedad;
+    public String enfermedad;
 
     public Paciente(String enfermedad, int edad, String nombre, int dni, int peso, int altura) {
         super(edad, nombre, dni, peso, altura);
@@ -13,12 +13,29 @@ public class Paciente extends Persona {
         return enfermedad;
     }
 
-    public void setEnfermedad(String enfermedad) {
-        this.enfermedad = enfermedad;
+    public int getEdad() {
+        return edad;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getDni() {
+        return dni;
+    }
+
+    public int getPeso() {
+        return peso;
+    }
+
+    public int getAltura() {
+        return altura;
+    }
+    
 
     
     
+
     
-    
-}
+   }
