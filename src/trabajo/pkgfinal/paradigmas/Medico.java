@@ -1,6 +1,12 @@
 
 package trabajo.pkgfinal.paradigmas;
 
-public class Medico {
-    private int edad;
-}
+
+public class Medico extends Persona{
+    protected String especialidad;
+    protected int matricula;
+
+   }
+    
+    
+

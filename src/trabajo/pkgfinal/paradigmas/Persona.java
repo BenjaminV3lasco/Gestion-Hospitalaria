@@ -2,9 +2,60 @@
 package trabajo.pkgfinal.paradigmas;
 
 public class Persona {
-    public int edad;
-    public String nombre;
-    public boolean rol; //Verdadero Médico, Falso Paciente
-    public int altura;
+    protected int edad;
+    protected String nombre;
+    protected int dni;
+    protected int peso;
+    protected int altura;
+
+    public Persona(int edad, String nombre, int dni, int peso, int altura) {
+        this.edad = edad;
+        this.nombre = nombre;
+        this.dni = dni;
+        this.peso = peso;
+        this.altura = altura;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getDni() {
+        return dni;
+    }
+
+    public int getPeso() {
+        return peso;
+    }
+
+    public int getAltura() {
+        return altura;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setDni(int dni) {
+        this.dni = dni;
+    }
+
+    public void setPeso(int peso) {
+        this.peso = peso;
+    }
+
+    public void setAltura(int altura) {
+        this.altura = altura;
+    }
     
+    
+   
 }
