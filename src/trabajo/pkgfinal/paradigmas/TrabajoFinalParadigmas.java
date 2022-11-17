@@ -34,7 +34,7 @@ public class TrabajoFinalParadigmas {
        }
        
         switch(respuesta){
-            case 1:
+            case 1://Se inserta los datos del Paciente
                 ctl.insertar();
                 ctl.enfermedadPaciente();
                 break;
@@ -58,7 +58,7 @@ public class TrabajoFinalParadigmas {
                 }
                 break;
             case 3:
-                JOptionPane.showMessageDialog(null, "¡Hasta Luego, que tenga buen día!");
+                JOptionPane.showMessageDialog(null, "¡Hasta luego, que tenga buen día!");
                 break;
            }
     }while(respuesta<3);

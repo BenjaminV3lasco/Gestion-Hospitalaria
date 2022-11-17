@@ -1,7 +1,7 @@
 
 package trabajo.pkgfinal.paradigmas;
 
-
+//Clase Médico
 public class Medico extends Persona{
     public String especialidad;
     public int matricula;

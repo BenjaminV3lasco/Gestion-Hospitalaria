@@ -2,11 +2,10 @@
 package trabajo.pkgfinal.paradigmas;
 import javax.swing.JOptionPane;
 
-
 public class Controlador {
     Paciente vector[]; //Creamos un array de tipo Paciente
     
-    public void setTamanio(int tam){//Elegimos el Tamaño del Arreglo, en este caso 1
+    public void setTamanio(int tam){//Establecemos el Tamaño del Arreglo, en este caso 1
         if(tam>0) vector = new Paciente[tam];
     }
     public int getTamanio(){
@@ -15,7 +14,6 @@ public class Controlador {
     
     public void insertar(){//Función para poder insertar datos de tipo Paciente en nuestro array
     Paciente paciente;
-    
     int i,edad,dni,peso,altura,codPaciente;
     String nombre;
     String info = "Ingrese los datos del Paciente\n";
@@ -35,39 +33,42 @@ public class Controlador {
         return JOptionPane.showInputDialog(texto);
     }
     
-    public void mostrarDatos(){//Función para mostrar los datos almacenados en nuestro array
+    public void mostrarDatos(){//Función para mostrar los datos del Paciente
         int i;
-        String info = "Historial Paciente\n";
+        String info = "   Historial Paciente\n";
         for(i=0;i<getTamanio();i++){
             info+="Código Paciente: "+vector[i].getCodPaciente()+"\n";
             info+="Nombre: "+vector[i].getNombre()+"\n";
             info+="Edad: "+vector[i].getEdad()+"\n";
             info+="DNI: "+vector[i].getDni()+"\n";
-            info+="Peso: "+vector[i].getPeso()+"\n";
-            info+="Altura : "+vector[i].getAltura()+"\n";
-            
-            
-        }
+            info+="Peso: "+vector[i].getPeso()+"kg"+"\n";
+            info+="Altura : "+vector[i].getAltura()+"cm"+"\n";
+            }
          JOptionPane.showMessageDialog(null, info);
     }
    public void enfermedadPaciente(){
        int enfermedad =0;
        int administracion=0;
        int cama=0;
-       int [] camas_desocupadas = {0,0,0,1,1,1,1,1,1,1};//1 Desocupada, 0 Ocupada
+       int [] camas_desocupadas = {1,1,1,1,1,1,1,1,1,1};//1 Desocupada, 0 Ocupada
        int grado_enfermedad,i;
         enfermedad = Integer.parseInt(JOptionPane.showInputDialog(
         "Ingrese la Enfermedad del Paciente\n"
-        +"1.Gripe\n"
-        +"2.Resfriado\n"
-        +"3.Covid\n"
-        +"4.Problemas del Corazón\n"
-        +"5.Miopia o Astigmatismo\n"
-        +"6.Lesion"));
+        +"1. Gripe\n"
+        +"2. Resfriado\n"
+        +"3. Covid\n"
+        +"4. Problemas del Corazón\n"
+        +"5. Miopia o Astigmatismo\n"
+        +"6. Lesion"));
        switch(enfermedad){//Según el tipo de enfermedad que tenga el Paciente, se le asignará un Médico de la Clínica
            case 1:
                JOptionPane.showMessageDialog(null, "Ustedes será atendido por el Médico 1\n");
                grado_enfermedad = Integer.parseInt(caja("Grado Enfermedad (1 al 10): "));
+               while(grado_enfermedad>10){
+                   JOptionPane.showMessageDialog(null, "Opción inválida\n");
+                   grado_enfermedad = Integer.parseInt(caja("Grado Enfermedad (1 al 10): "));
+               }
+               
                if(grado_enfermedad>=5){
                    JOptionPane.showMessageDialog(null, "Usted fue derivado a internación por el Médico\n");
                    administracion=administracion+1;
@@ -78,6 +79,10 @@ public class Controlador {
            case 2:
                JOptionPane.showMessageDialog(null, "Ustedes será atendido por el Médico 1\n");
                grado_enfermedad = Integer.parseInt(caja("Grado Enfermedad (1 al 10): "));
+               while(grado_enfermedad>10){
+                   JOptionPane.showMessageDialog(null, "Opción inválida\n");
+                   grado_enfermedad = Integer.parseInt(caja("Grado Enfermedad (1 al 10): "));
+               }
                if(grado_enfermedad>=5){
                    JOptionPane.showMessageDialog(null, "Usted fue derivado a internación por el Médico\n");
                    administracion=administracion+1;
@@ -88,6 +93,10 @@ public class Controlador {
            case 3:
                JOptionPane.showMessageDialog(null, "Ustedes será atendido por el Médico 1\n");
                grado_enfermedad = Integer.parseInt(caja("Grado Enfermedad (1 al 10): "));
+               while(grado_enfermedad>10){
+                   JOptionPane.showMessageDialog(null, "Opción inválida\n");
+                   grado_enfermedad = Integer.parseInt(caja("Grado Enfermedad (1 al 10): "));
+               }
                if(grado_enfermedad>=5){
                    JOptionPane.showMessageDialog(null, "Usted fue derivado a internación por el Médico\n");
                    administracion=administracion+1;
@@ -96,8 +105,12 @@ public class Controlador {
                }
                break;
            case 4:
-               JOptionPane.showMessageDialog(null, "Ustedes será atendido por el Médico 3\n");
+               JOptionPane.showMessageDialog(null, "Usted será atendido por el Médico 3\n");
                grado_enfermedad = Integer.parseInt(caja("Grado Enfermedad (1 al 10): "));
+               while(grado_enfermedad>10){
+                   JOptionPane.showMessageDialog(null, "Opción inválida\n");
+                   grado_enfermedad = Integer.parseInt(caja("Grado Enfermedad (1 al 10): "));
+               }
                if(grado_enfermedad>=5){
                    JOptionPane.showMessageDialog(null, "Usted fue derivado a internación por el Médico\n");
                    administracion=administracion+1;
@@ -106,8 +119,12 @@ public class Controlador {
                }
                break;
            case 5:
-               JOptionPane.showMessageDialog(null, "Ustedes será atendido por el Médico 4\n");
+               JOptionPane.showMessageDialog(null, "Usted será atendido por el Médico 4\n");
                grado_enfermedad = Integer.parseInt(caja("Grado Enfermedad (1 al 10): "));
+               while(grado_enfermedad>10){
+                   JOptionPane.showMessageDialog(null, "Opción inválida\n");
+                   grado_enfermedad = Integer.parseInt(caja("Grado Enfermedad (1 al 10): "));
+               }
                if(grado_enfermedad>=5){
                    JOptionPane.showMessageDialog(null, "Usted fue derivado a internación por el Médico\n");
                    administracion=administracion+1;
@@ -116,8 +133,12 @@ public class Controlador {
                }
                break;
            case 6:
-               JOptionPane.showMessageDialog(null, "Ustedes será atendido por el Médico 2\n");
+               JOptionPane.showMessageDialog(null, "Usted será atendido por el Médico 2\n");
                grado_enfermedad = Integer.parseInt(caja("Grado Enfermedad (1 al 10): "));
+               while(grado_enfermedad>10){
+                   JOptionPane.showMessageDialog(null, "Opción inválida\n");
+                   grado_enfermedad = Integer.parseInt(caja("Grado Enfermedad (1 al 10): "));
+               }
                if(grado_enfermedad>=5){
                    JOptionPane.showMessageDialog(null, "Usted fue derivado a internación por el Médico\n");
                    administracion=administracion+1;
@@ -129,7 +150,10 @@ public class Controlador {
        if(administracion>=1){//El Paciente se encuentra en Administración
            JOptionPane.showMessageDialog(null, "                Administración\n"+"Se le asignará una cama para la internación\n");
            cama = Integer.parseInt(caja("Seleccione una cama (1 al 10): "));
-            
+           while(cama>10){
+               JOptionPane.showMessageDialog(null, "Opción inválida\n");
+               cama = Integer.parseInt(caja("Seleccione una cama (1 al 10): "));
+           }
            while(camas_desocupadas[cama]==0){
                 JOptionPane.showMessageDialog(null, "La cama se encuentra ocupada, seleccione otra\n");
                 cama = Integer.parseInt(caja("Seleccione una cama (1 al 10): "));
@@ -139,8 +163,6 @@ public class Controlador {
             camas_desocupadas[cama]=0;
                 
                 }
-            
-            
             }
         }
        

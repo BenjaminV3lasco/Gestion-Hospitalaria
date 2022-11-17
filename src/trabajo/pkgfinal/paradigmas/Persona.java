@@ -1,6 +1,7 @@
 
 package trabajo.pkgfinal.paradigmas;
 
+//Clase Persona
 public class Persona {
     protected int edad;
     protected String nombre;

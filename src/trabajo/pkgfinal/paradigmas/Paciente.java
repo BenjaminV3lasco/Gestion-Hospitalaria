@@ -1,6 +1,6 @@
 package trabajo.pkgfinal.paradigmas;
 
-
+//Clase Paciente
 public class Paciente extends Persona {
     public int codPaciente;
 
