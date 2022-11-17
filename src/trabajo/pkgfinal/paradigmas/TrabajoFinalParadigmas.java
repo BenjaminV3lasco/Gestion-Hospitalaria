@@ -1,8 +1,5 @@
 package trabajo.pkgfinal.paradigmas;
-
-
 import trabajo.pkgfinal.paradigmas.Medico;
-
 import javax.swing.JOptionPane;
 
 public class TrabajoFinalParadigmas {
@@ -11,7 +8,6 @@ public class TrabajoFinalParadigmas {
        
       int respuesta, info,i;
       
-      info=0;
       Controlador ctl = new Controlador();
       ctl.setTamanio(1);
       
@@ -23,13 +19,19 @@ public class TrabajoFinalParadigmas {
       Medico medico5 = new Medico("Cirujano",100,49,"Carlos Velazquez",29756899,80,174);
       
      
-        
-    do{
+    do{//Menú Principal
        respuesta = Integer.parseInt(JOptionPane.showInputDialog(
        "¡Bienvenido al Sistema de Gestión Hospitalaria!\n"
        +"1. Ingresar los datos del paciente\n"
        +"2. Ver Informacion\n"
        +"3. Salir del Sistema"));
+       while(respuesta<1 || respuesta>3){
+       respuesta = Integer.parseInt(JOptionPane.showInputDialog(
+       "Opción invalida\n"
+       +"1. Ingresar los datos del paciente\n"
+       +"2. Ver Informacion\n"
+       +"3. Salir del Sistema"));
+       }
        
         switch(respuesta){
             case 1:
@@ -38,45 +40,17 @@ public class TrabajoFinalParadigmas {
                 break;
             case 2:
                 info = Integer.parseInt(JOptionPane.showInputDialog(
-       
                 "1. Médicos Disponibles\n"
                 +"2. Historial Clínico del Paciente"));
                 
                 switch(info){
                     case 1://Listado Médicos de la Clínica
                         
-                        System.out.println("============================");
-                        System.out.println("Nombre: "+medico1.nombre);
-                        System.out.println("Edad: "+medico1.edad);
-                        System.out.println("DNI: "+medico1.dni);
-                        System.out.println("Especialidad: "+medico1.especialidad);
-                        System.out.println("Matricula: "+medico1.matricula);
-                        System.out.println("============================");
-                        System.out.println("Nombre: "+medico2.nombre);
-                        System.out.println("Edad: "+medico2.edad);
-                        System.out.println("DNI: "+medico2.dni);
-                        System.out.println("Especialidad: "+medico2.especialidad);
-                        System.out.println("Matricula: "+medico2.matricula);
-                        System.out.println("============================");
-                        System.out.println("Nombre: "+medico3.nombre);
-                        System.out.println("Edad: "+medico3.edad);
-                        System.out.println("DNI: "+medico3.dni);
-                        System.out.println("Especialidad: "+medico3.especialidad);
-                        System.out.println("Matricula: "+medico3.matricula);
-                        System.out.println("============================");
-                        System.out.println("Nombre: "+medico4.nombre);
-                        System.out.println("Edad: "+medico4.edad);
-                        System.out.println("DNI: "+medico4.dni);
-                        System.out.println("Especialidad: "+medico4.especialidad);
-                        System.out.println("Matricula: "+medico4.matricula);
-                        System.out.println("============================");
-                        System.out.println("Nombre: "+medico5.nombre);
-                        System.out.println("Edad: "+medico5.edad);
-                        System.out.println("DNI: "+medico5.dni);
-                        System.out.println("Especialidad: "+medico5.especialidad);
-                        System.out.println("Matricula: "+medico5.matricula);
-                        System.out.println("============================");
-                        
+                     JOptionPane.showMessageDialog(null,"Médico 1"+"\n"+"Nombre: "+medico1.nombre+"\n"+"Edad: "+medico1.edad+"\n"+"DNI: "+medico1.dni+"\n"+"Especialidad: "+medico1.especialidad+"\n"+"Matricula: "+medico1.matricula);
+                     JOptionPane.showMessageDialog(null,"Médico 2"+"\n"+"Nombre: "+medico2.nombre+"\n"+"Edad: "+medico2.edad+"\n"+"DNI: "+medico2.dni+"\n"+"Especialidad: "+medico2.especialidad+"\n"+"Matricula: "+medico2.matricula);   
+                     JOptionPane.showMessageDialog(null,"Médico 3"+"\n"+"Nombre: "+medico3.nombre+"\n"+"Edad: "+medico3.edad+"\n"+"DNI: "+medico3.dni+"\n"+"Especialidad: "+medico3.especialidad+"\n"+"Matricula: "+medico3.matricula);   
+                     JOptionPane.showMessageDialog(null,"Médico 4"+"\n"+"Nombre: "+medico4.nombre+"\n"+"Edad: "+medico4.edad+"\n"+"DNI: "+medico4.dni+"\n"+"Especialidad: "+medico4.especialidad+"\n"+"Matricula: "+medico4.matricula);   
+                     JOptionPane.showMessageDialog(null,"Médico 5"+"\n"+"Nombre: "+medico5.nombre+"\n"+"Edad: "+medico5.edad+"\n"+"DNI: "+medico5.dni+"\n"+"Especialidad: "+medico5.especialidad+"\n"+"Matricula: "+medico5.matricula);   
                         break;
                     case 2://Historial Clínico Paciente
                         ctl.mostrarDatos();
@@ -86,15 +60,9 @@ public class TrabajoFinalParadigmas {
             case 3:
                 JOptionPane.showMessageDialog(null, "¡Hasta Luego, que tenga buen día!");
                 break;
-            default:
-                JOptionPane.showMessageDialog(null, "Opcion invalida");
-                        break;
-        }
+           }
     }while(respuesta<3);
     
-    
-    
-    
-    }//Fin Main
-    
+  }//Fin Main
+
 }
